@@ -20,3 +20,11 @@ code {
   background-color: #eee;
   font-family: courier, monospace;
 }
+
+a:link {
+  color: cadetblue;
+}
+
+a:visited {
+  color: coral;
+}
