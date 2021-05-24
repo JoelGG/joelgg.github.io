@@ -7,7 +7,21 @@
 body {
   margin: 0 auto;
   padding: 0 1em;
-  max-width: 800px;
+  max-width: 50em;
+  line-height: 1.5;
+  color: rgb(49, 49, 49);
+}
+
+h1, h2, h3, h4, h5, h6, strong {
+  color: rgb(36, 36, 36);
+}
+
+code, pre {
+  background: #eee;
+}
+
+code {
+  font-family: courier, monospace;
 }
 
 pre {
@@ -16,10 +30,7 @@ pre {
   padding: 0;
 }
 
-code {
-  background-color: #eee;
-  font-family: courier, monospace;
-}
+
 
 a:link {
   color: #e7473c;
