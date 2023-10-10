@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="My experience at Byrd">
+  <link rel="stylesheet" href="../../index.css">
+  <title>My Experience at Byrd</title>
+</head>
+
+<body>
+  <header>
+    <a href="../../">
+      <h1>Joel Grimmer</h1>
+    </a>
+    <i>First Class Computer Science Graduate (MEng), with experience working with a variety of languages accross a
+      range
+      of software domains.</i>
+  </header>
+  <main>
+    <h2>My Experience at Byrd</h2>
+    <p align=”justify”>I worked at <a href="https://web.archive.org/web/20210505234916/http://www.byrd.run/">Byrd</a>
+      for three months
+      during the summer of 2020 and for a month in the summer of 2021. I gained the role by applying through the
+      University of Bristol's Small to Medium Enterprise (SME) internship scheme in 2020. The role was initially
+      intended to last for only a month however the team were so impressed with my performance that I was asked to
+      return for the next two months. I would have liked to have worked for the same amount of time in 2021 however I
+      was about to begin my year abroad at the University of Copenhagen so I was only able to work for a month.</p>
+    </p>
+    <h3>Summer 2020</h3>
+    My work during the summer of 2020 mostly consisted of front-end development for the Byrd mobile app. The team was
+    approaching the completion of the MVC (Minimum Viable Product) and so I was tasked with implementing and improving
+    many missing views, such as screens dedicated to a user's goals, the entire settings panel, and views for an
+    individual run.
+    <h4>Map Screen</h4>
+    <p>
+      I implemented a map screen for the app using the OpenStreetMap Flutter plugin. This was developed as a component
+      included in a view which gave an overview of a user's run which included metrics such as distance travelled and
+      average pace. In order to maintain the design language for the app I implemented a custom theme for the map,
+      and I added markers for the user's start and end positions. I used coordinate data to draw the user's run route
+      using location coordinates recorded during the run. Different run providers, such as Strava and Garmin, use
+      different coordinate systems and tracking algorithms so I had to implement a method to convert between these
+      different systems to ensure that the run route was drawn correctly. The map included functions to centre the
+      screen around the path taken by the user and to zoom in and out of to an acceptable degree.
+    </p>
+    <p>
+      The initial choice was to use the MapBox api to implement the map screen however the API was less mature than the
+      OpenStreetMap plugin and was not as well documented. The OpenStreetMap plugin was also open source and therefore
+      free to use, which was a key consideration for a startup company. The OpenStreetMap plugin was also more
+      performant as it used a <a href="https://en.wikipedia.org/wiki/Tiled_web_map">tiled web map</a> system rather than
+      the vector maps used by Mapbox GL. I went over the advantages and disadvantges of both providers with the team
+      and we decided that the OpenStreetMap plugin was the best choice for the app.
+    </p>
+    <h4>Run Goals</h4>
+    <p>
+      I implemented a view for a user's running goal. A goal would consist of a distance (e.g. 5k, 10k, half-marathon)
+      and a target pace. The goal view would display the user's progress towards their goal and would display a set of
+      potential times based on different paces which were taken from the user's previous runs. The goal view produced a
+      kilometer by kilometer breakdown of potential pace for a goal to be achieved.
+    </p>
+    <p>
+      Such a view required a variety of components such as sliders, table views, custom icons, and more. The view
+      faithfully implemented the specification provided by the designer and was well received by the team.
+    </p>
+    <h4>Settings Panel and User Onboarding</h4>
+    <p>
+      I implemented a settings panel for the app which allowed the user to change a number of parameters including
+      personal information, distance metrics, and more. The settings panel was implemented as a series of views which
+      all shared a common design language and common custom components. Many of these views, such as preferred distance
+      metrics and location information were shared with the user onboarding flow, which I also helped to implement. Such
+      work requied building on componants built by other developers and required a good understanding of the codebase.
+      It also requied an awareness of where the components and views were currently used and how they could be extended
+      without changing their behaviour in other parts of the app.
+    </p>
+    <p>
+      Whilst many of the views were simple forms others were more complex. For example, the view which allowed the user
+      to delete their account requied to user to enter their password and then confirm their decision to delete their
+      account. Sensetive pages such as these required interaction with the Firebase backend, which I also implemented.
+    </p>
+    <h3>Summer 2021</h3>
+    <p>
+      Despite only having a month to work at Byrd in 2021 I was able to make some important contributions to the app.
+      I'm proud of the experiential achievements feature, which added a human touch to the feedback and made each run a
+      bit
+      more memorable. I also implemented a test suite for the app which allowed the team to test the app more
+      thoroughly. I enjoyed working on aspects of the project that I could take near full ownership of and which had a
+      tangible
+      impact on either the user experience or that of the rest of the development team.
+    </p>
+    <h4>Experiental Goals</h4>
+    <p>
+      The team had been wanting to add a feature that allowed completed runs to have more context than just statistics,
+      and we hatched the idea for an experiental goals system that would hilight a range of different achievements that
+      a user had completed in a given run. These ranged from performance milestones such as best pace or longest
+      distance to more fun achievements such as running at goldel hour or running during a full moon. The idea was to
+      give users the sense that each run could provide unique experiences and provide a reward mechanism where the user
+      could discover new achievements and try to complete them.
+    </p>
+    <p>
+      I enjoyed taking this feature from conception to implementation. I worked with the rest of the team to come up
+      with where are how this would be visualised in the app, and which computation would take place on the server and
+      which
+      would take place locally. Implementing the feature involved analysing large quantities of data from the Firebase
+      Cloud Firestore database through the use of Firebase Cloud Functions. I also had to implement a system where this
+      data could be effectively communicated to the client app. The client app would call a function on the server to
+      check whether the goals
+      had been completed and then would display the goals in a view. I implemented a custom view for the goals which
+      was designed to be reusable and to be easily extended to include new goals.
+    </p>
+    <h4>Test Suite</h4>
+    <p>
+      For the remainder of my time working at Byrd in the summer of 2021 I worked on implementing a test suite for the
+      app. The app was already being tested manually by the team however this was time consuming and did not provide the
+      kind of guranteed
+      coverage that a test suite would provide. I implemented a test suite using the Flutter test framework which
+      allowed the team to test the app more thoroughly and to test the app more quickly. Tests ranged from UI level
+      component tests to unit tests for the app's business logic. It was really rewarding to work on this side of the
+      app,
+      as even though it was not visible to the user it made the app more reliable, improving user experience, and
+      improved the experience of my colleages even when I had left to return to my studies.
+    </p>
+    <h3>Conclusions</h3>
+    <p>
+      I thoroughly enjoyed my time working at Byrd and felt that it was a great opportunity to work in a small team on
+      a product that I was passionate about. I was able to make a real impact on the app and I was able to take
+      ownership of a number of features. I found many of the skills I gained during my time at Byrd were helpful in
+      other situations. Front-end programming in flutter shares many similarities with working with the React framework,
+      and as such improving my ability to write declarative UI components and work with state management libraries
+      helped down the line when working on React projects for university.
+    </p>
+    <p>
+      The introduction to an AGILE workflow and a focus on good Git processes was incredibly useful. I was able to take
+      this knowledge and apply it to my group projects at university, and I was able to help my group members to adopt
+      to these processes.
+    </p>
+  </main>
+  <footer>
+    <p>© Joel Grimmer 2023</p>
+  </footer>
+</body>
+
+</html>
