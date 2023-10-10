@@ -42,12 +42,14 @@ pre {
   margin-left: 10px;
 }
 
-a:link {
-  color: #e7473c;
-  color: #4575b3;
+a:visited {
+  color: rgb(49, 49, 49);
+  text-decoration: underline;
+  text-decoration-color: #4575b3;
 }
 
-a:visited {
-  color: #e7473c;
-  color: #4575b3;
+a:link {
+  color: rgb(49, 49, 49);
+  text-decoration: underline;
+  text-decoration-color: #4575b3;
 }
